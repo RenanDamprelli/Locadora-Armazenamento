@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">MegaVídeo</string>
+    <string name="btn_local">Acessar minha localização</string>
+    <string name="btn_foto">Adicione uma foto</string>
+    <string name="btn_entrar">Entrar</string>
+    <string name="txt_login">Nome de usuário</string>
+    <string name="txt_senha">Senha</string>
+    <string name="txt_local">Localização</string>
+    <string name="txt_foto">Adicione uma foto</string>
+    <string name="txt_filme1">Vingadores: Guerra Infinita</string>
+    <string name="txt_filme2">Star Wars: A Ascensão Skywalker</string>
+    <string name="txt_filme3">Avatar</string>
+
+
+    <string name="txt_price1">R$ 9,99</string>
+    <string name="txt_taluguel">Tempo de aluguel</string>
+    <string name="txt_fpag">Forma de pagamento</string>
+    <string name="rd_7">7 dias</string>
+    <string name="rd_14">14 dias</string>
+    <string name="rd_21">21 dias</string>
+    <string name="rd_card">Cartão</string>
+    <string name="rd_din">Dinheiro</string>
+    <string name="btn_info">+Info</string>
+
+    <string name="get_location">Obter Localização</string>
+    <string name="textview_hint">Clique no botão</string>
+    <string name="location_permission_denied">Permissão negada, autorize a aplicação</string>
+    <string name="address_text">"Endereço: %1$s  \n Latitude: %2$s \n Longitude: %3$s \n Horário: %4$tr"</string>
+
+    <string name="no_location">Localização Indisponível</string>
+    <string name="no_address_found">Endereço não disponível</string>
+    <string name="loading">Procurando…</string>
+    <string name="service_not_available">Serviço Indisponível</string>
+    <string name="invalid_lat_long_used">Coordenadas Inválidas</string>
+    <string name="start_tracking_location">Iniciar a Busca</string>
+    <string name="stop_tracking_location">Parar a Busca</string>
+
+
+</resources>
