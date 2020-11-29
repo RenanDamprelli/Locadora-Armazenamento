@@ -4,6 +4,7 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.MenuItem;
@@ -18,12 +19,16 @@ import androidx.core.app.ActivityCompat;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.io.File;
+import java.io.FileOutputStream;
+
 public class Settings extends AppCompatActivity {
 
     TextView loginview;
     TextView senhaview;
     TextView localview;
     ImageView imgFoto;
+    String picturePath;
 
     @Override
     protected void onCreate(final Bundle SavedInstanceState) {
@@ -67,6 +72,13 @@ public class Settings extends AppCompatActivity {
             ActivityCompat.requestPermissions(Settings.this, new String[] {Manifest.permission.CAMERA}, 0);
         }
         imgFoto = (ImageView) findViewById(R.id.img_foto);
+        this.picturePath = this.getExternalFilesDir("png").toString() + "picture.png";
+
+        File picture = new File(this.picturePath);
+        if(picture.exists()) {
+            Bitmap bitmap = BitmapFactory.decodeFile(this.picturePath);
+            imgFoto.setImageBitmap(bitmap);
+        }
     }
 
     public void CapturarFoto(){
@@ -82,9 +94,21 @@ public class Settings extends AppCompatActivity {
             Bundle extras = data.getExtras();
             Bitmap imagem = (Bitmap) extras.get("data");
             imgFoto.setImageBitmap(imagem);
+            try {
+                File file = new File(picturePath);
+                if(file.exists())
+                    file.delete();
+                FileOutputStream output = new FileOutputStream(file);
+                imagem.compress(Bitmap.CompressFormat.PNG, 100, output);
+                output.flush();
+                output.close();
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
         }
         super.onActivityResult(requestCode, resultCode, data);
     }
+
     public void Localizacao (View view){
         Intent intentenviar = new Intent(this,Localizacao.class);
         startActivity(intentenviar);

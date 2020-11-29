@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
     TextView txtlogin;
     TextView txtsenha;
     Button entrar;
-    Button local;
+    Button cad;
 
 
     @Override
@@ -25,13 +25,18 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-
         login = (EditText) findViewById(R.id.edtxt_login);
         senha = (EditText) findViewById(R.id.edtxt_senha);
         txtlogin = (TextView) findViewById(R.id.txt_login);
         txtsenha = (TextView) findViewById(R.id.txt_senha);
         entrar = (Button) findViewById(R.id.btn_entrar);
-        local = (Button) findViewById(R.id.btn_local);
+        cad = (Button) findViewById(R.id.btn_cad);
+    }
+
+    public void Cad (View view) {
+
+        Intent intentcad = new Intent(this,Cadastro.class);
+        startActivity(intentcad);
     }
 
     public void Entrar (View view) {
